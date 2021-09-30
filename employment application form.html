@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Employment Application Form</title>
+    <style>
+      html, body {
+      min-height: 100%;
+      }
+      body, div, form, input, select, textarea, p { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 14px;
+      color: #666;
+      line-height: 22px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 32px;
+      color: #fff;
+      z-index: 2;
+      }
+      h5 {
+      margin: 10px 0;
+      }
+
+      a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
+}
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 100%;
+      padding: 20px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 20px 0 #095484; 
+      }
+      .banner {
+      position: relative;
+      height: 210px;
+      background-image: url("https://ugr.miami.edu/_assets/images/spring2021/checklist-568x320.png");  
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      }
+      .banner::after {
+      content: "";
+      background-color: rgba(0, 0, 0, 0.5); 
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      }
+      input, select, textarea {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      textarea {
+      width: calc(100% - 12px);
+      padding: 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder, a {
+      color: #095484;
+      }
+      .item input:hover, .item select:hover, .item textarea:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #095484;
+      color: #095484;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+
+      table, th, td {
+  border:1px solid black;
+}
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #a9a9a9;
+      }
+      .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      input[type=radio], input[type=checkbox]  {
+      display: none;
+      }
+      label.radio, label.check {
+      position: relative;
+      display: inline-block;
+      margin: 5px 20px 15px 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      span.required {
+      margin-left: 0;
+      color: red;
+      }
+      .checkbox-item label {
+      margin: 5px 20px 10px 0;
+      }
+      label.radio:before, label.check:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      }
+      label.radio:before {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #095484;
+      }
+      label.check:before {
+      top: 2px;
+      width: 16px;
+      height: 16px;
+      border-radius: 2px;
+      border: 1px solid #095484;
+      }
+      input[type=checkbox]:checked + .check:before {
+      background: #095484;
+      }
+      label.radio:after {
+      left: 5px;
+      border: 3px solid #095484;
+      }
+      label.check:after {
+      left: 4px;
+      border: 3px solid #fff;
+      }
+      label.radio:after, label.check:after {
+      content: "";
+      position: absolute;
+      top: 6px;
+      width: 8px;
+      height: 4px;
+      background: transparent;
+      border-top: none;
+      border-right: none;
+      transform: rotate(-45deg);
+      opacity: 0;
+      }
+      input[type=radio]:checked + label:after, input[type=checkbox]:checked + label:after {
+      opacity: 1;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #0666a3;
+      }
+      @media (min-width: 568px) {
+      .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .city-item input {
+      width: calc(50% - 20px);
+      }
+      .city-item select {
+      width: calc(50% - 8px);
+      }
+      }
+
+     
+    </style>
+  </head>
+  <body>
+    <div class="testbox">
+    <form action="/">
+      <div class="banner">
+        <h1>Employment Application Form</h1>
+      </div>
+
+      <div class="item">
+        <ul>
+        <LI type="DECIMAL"><a href="#personalinformation">Click here to fill PERSONAL INFORMATION</a></LI><br>
+        <LI type="DECIMAL"><a href="#education and experience">Click here to fill EDUCATION AND EXPERIENCE </a></LI><br>
+        <LI type="DECIMAL"><a href="#employment history">Click here to fill EMPLOYMENT HISTORY </a></LI><br>
+        <LI type="DECIMAL"><A href="#Positions and Availability">Click here to Select POSITION AND AVAILABILITY OF JOBS</A></LI><BR>
+        <LI type="DECIMAL"><A href="#APPLYING FOR">Click here to fill what you are APPLYING FOR</A></LI><BR>   
+        <LI type="DECIMAL"><A href="#REFERENCES">Click here to go to REFERENCES</A></LI><BR>
+            <LI type="DECIMAL"><A href="#DECLARATION">Click here to fill DECLARATION</A></LI><BR>
+              </ul>
+      </div>
+     
+        <h4 id="personalinformation">1. Personal information:</h4>
+        <div class="item">
+        <p>Name<span class="required">*</span></p>
+        <input type="text" name="name" required/>
+      </div>
+      <div class="item">
+        <p> Address<span class="required">*</span></p>
+        <input type="text" name="name" placeholder="Street address" required/>
+        <input type="text" name="name" placeholder="Street address line 2" required/>
+        <div class="city-item">
+          <input type="text" name="name" placeholder="City" required/>
+          <input type="text" name="name" placeholder="Region" required/>
+          <input type="text" name="name" placeholder="Postal / Zip code" required/>
+          <select required>
+            <option value="">Country</option>
+            <option value="1">Russia</option>
+            <option value="2">Germany</option>
+            <option value="3">France</option>
+            <option value="4">Armenia</option>
+            <option value="5">USA</option>
+            <option value="6">India</option>
+          </select>
+        </div>
+      </div>
+      <div class="item">
+        <p>Phone<span class="required">*</span></p>
+        <input type="text" name="name" required/>
+      </div>
+      <div class="item">
+        <p>Social security number</p>
+        <input type="text" name="name" />
+      </div>
+      <div class="item">
+        <p>Email<span class="required">*</span></p>
+        <input type="text" name="name" required/>
+      </div>
+     
+      <div class="question">
+        <p>Are you interested to work in the India?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_1" name="investigator" required/>
+          <label for="radio_1" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_2" name="investigator" required/>
+          <label for="radio_2" class="radio"><span>No</span></label>
+        </div>
+      </div>
+      <div class="question">
+        <p>If you are under age eighteen, do you have an employment certificate?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_3" name="co-investigator" required/>
+          <label for="radio_3" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_4" name="co-investigator" required/>
+          <label for="radio_4" class="radio"><span>No</span></label>
+        </div>
+      </div>
+     <h5>(information about convictions varies based on state law and may not be legal to ask in your location)</h5>
+      <div class="question">
+        <p>Have you been convicted of a felony within the last five years?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+        
+      </div>
+      <h4 id="education and experience">2. Education and Experience:</h4>
+       <div class="item">
+        <table style="width:100%">
+          <tr>
+            <th>s.no</th>
+            <th>school(s)/college attended </th>
+            <th>Name of institution</th>
+            <th>percentage</th>
+            <th>graduation date</th>
+          </tr>
+          <tr>
+            <td>1.</td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="Name of institution" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="percentage" required/></td>
+          
+            
+          </tr>
+          <tr>
+            <td>2.</td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="Name of institution" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="percentage" required/></td>
+          </tr>
+          <tr>
+            <td>3.</td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="Name of institution" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="percentage" required/></td>
+          </tr>
+          <tr>
+            <td>4.</td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="Name of institution" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="percentage" required/></td>
+          </tr>
+          <tr>
+            <td>5.</td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="Name of institution" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="percentage" required/></td>
+          </tr>
+          </table>
+       </div>
+       
+       <div class="item">
+        <p>if any perticular cirtifications please upload here.</p>
+        <input type="file" >
+      </div>
+
+      <div class="item">
+        <p>skills and qualifications.</p>
+        <input type="text" name="skills" required/>
+      </div>
+
+      <div class="item">
+        <p>grade point average(G.P.A)</p>
+        <input type="text" name="skills" required/>
+      </div>
+      <div class="item">
+        <p>Extracurricular activities where you held a leadership role</p>
+        <input type="text" name="skills" required/>
+      </div>
+      <div class="item">
+        <p>Honor societies</p>
+        <input type="text" name="skills" required/>
+      </div>
+     
+      
+      <h4 id="employment history">3. Employment History</h4>
+      <div class="question">
+        <p>Are you currently employed?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+
+        
+      </div>
+      <div class="question">
+        <p>If you are currently employed, may we contact your current employer?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+        
+        
+      </div>
+      <div class="question">
+        <p>May we contact this employer for references?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+        
+        
+      </div>
+      <div class="item">
+        <table style="width:100%">
+          <tr>
+            <th>s.no</th>
+            <th>employer </th>
+            <th>Address, phone, email</th>
+            <th>Supervisor</th>
+            <th>Job title and responsibilities</th>
+            <th>Salary</th>
+            <th>start/end date</th>
+            <th>reason for leaving</th>
+            <th>permission to contact previous employer</th>
+          </tr>
+          <tr>
+            <th>1.</th>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            
+          </tr>
+          <tr>
+            <th>2.</th>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            
+          </tr>
+          <tr>
+            <th>3.</th>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            <td> <input type="text" name="graduation date" required/></td>
+            <td> <input type="text" name="schools attended" required/></td>
+            <td> <input type="text" name="degrees" required/></td>
+            
+          </tr>
+          </table>
+          </div>
+          <div class="question">
+            <p>Have you ever applied to / worked for [Our Company] before?<span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="none" id="radio_5" name="research" required/>
+              <label for="radio_5" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="radio_6" name="research" required/>
+              <label for="radio_6" class="radio"><span>No</span></label>
+            </div>
+            
+            
+          </div>
+          <div class="item">
+            <p>If yes, please explain (include date):</p>
+            <input type="text" name="skills">
+          </div>
+          <div class="question">
+            <p>Do you have any friends, relatives, or acquaintances working for [Our Company]?<span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="none" id="radio_5" name="research" required/>
+              <label for="radio_5" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="radio_6" name="research" required/>
+              <label for="radio_6" class="radio"><span>No</span></label>
+            </div>
+            
+            
+          </div>
+          <div class="item">
+            <p>If yes, state name & relationship:</p>
+            <input type="text" name="skills">
+          </div>
+          <div class="question">
+            <p>If hired, would you have transportation to/from work?<span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="none" id="radio_5" name="research" required/>
+              <label for="radio_5" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="radio_6" name="research" required/>
+              <label for="radio_6" class="radio"><span>No</span></label>
+            </div>
+            
+            
+          </div>
+          <div class="question">
+            <p>Are you over the age of 18?<span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="none" id="radio_5" name="research" required/>
+              <label for="radio_5" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="radio_6" name="research" required/>
+              <label for="radio_6" class="radio"><span>No</span></label>
+            </div>
+            
+            
+          </div>
+          <div class="question">
+            <p>If you are under the age of 18, do you have an employment/age certificate?<span class="required">*</span></p>
+            <div class="question-answer">
+              <input type="radio" value="none" id="radio_5" name="research" required/>
+              <label for="radio_5" class="radio"><span>Yes</span></label>
+              <input type="radio" value="none" id="radio_6" name="research" required/>
+              <label for="radio_6" class="radio"><span>No</span></label>
+            </div>
+            
+            
+          </div>
+          <h4 id="Positions and Availability">4. Position and Availability</h4>
+      <div class="item">
+        <p>Position Applying For:<span class="required">*</span></p>
+        <textarea rows="3" required></textarea>
+      </div>
+      <div class="item">
+        <p>Desired Salary: $</p>
+        <input type="text" name="skills">
+      </div>
+      <h4 id="APPLYING FOR">5. Are you applying for:</h4>
+      <div class="question">
+        <p>Temporary work – such as summer or holiday work?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+        
+        
+      </div>
+      <div class="question">
+        <p>Regular part-time work?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+        
+        
+      </div>
+      <div class="question">
+        <p>Regular full-time work?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+        
+        
+      </div>
+      <h4>If applying for temporary work, indicate your desired length of employment below:</h4>
+      <div class="item">
+        <p>start date:</p>
+        <input type="date" name="bdate" required/>
+        <i class="fas fa-calendar-alt"></i>
+        <p>end date:</p>
+        <input type="date" name="bdate" required/>
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <div class="question">
+        <p>Are you available to work overtime? <span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+        
+        
+      </div>
+      <div class="item">
+        <p>If hired, on what date can you start working?<span class="required">*</span></p>
+      
+        <input type="date" name="bdate" required/>
+        <i class="fas fa-calendar-alt"></i>
+      </div>
+      <div class="item">
+        <p>Skills and Qualifications: Licenses, Skills, Training, Awards<span class="required">*</span></p>
+        <textarea rows="3" required></textarea>
+      </div>
+      <div class="question">
+        <p> Do you speak, write or understand any foreign languages?<span class="required">*</span></p>
+        <div class="question-answer">
+          <input type="radio" value="none" id="radio_5" name="research" required/>
+          <label for="radio_5" class="radio"><span>Yes</span></label>
+          <input type="radio" value="none" id="radio_6" name="research" required/>
+          <label for="radio_6" class="radio"><span>No</span></label>
+        </div>
+        
+        
+      </div>
+      <div class="item">
+        <p>If yes, list which languages(s) and how fluent you consider yourself to be:<span class="required">*</span></p>
+        <textarea rows="3" required></textarea>
+      </div>
+      <h4 id="REFERENCES">6. References</h4>
+      <div class="item">
+        <table style="width:100%">
+          <tr>
+            <th>s.no</th>
+            <th>name</th>
+            <th>job title</th>
+            <th>company</th>
+            <th>address,phone,email</th>
+            </tr>
+            <tr>
+              <td>1.</td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td>3.</td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+              <td>4.</td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+              <td><input type="text" name="name"></td>
+            </tr>
+      </table>
+      <h4 id="DECLARATION">7. DECLARATION</h4>
+
+      <div class="question">
+        <p><ul>
+          <li>I understand these details will be held in confidence by the Company, for the purposes of assessing this application, ongoing personnel administration and payroll administration (where applicable) in compliance.</li>
+          <li>declare that the information given in this form is complete and accurate.</li>
+          <li>I understand that any false information or deliberate omissions will disqualify me from employment or may render me liable to summary dismissal.</li>
+        </ul><span class="required">*</span></p>
+        <div class="question-answer checkbox-item">
+          <div>
+            <input type="checkbox" value="none" id="check_9" name="check" required/>
+            <label for="check_9" class="check"><span>I agree to the <a href="#">terms of service.</a></span></label>
+          </div>
+        </div>
+      </div>
+        <div class="item">
+          <p id="DECLARATION">Electronic signature<span class="required">*</span></p>
+          <textarea rows="3" required></textarea>
+          <input type="file" >
+        </div>
+        <div class="btn-block">
+          <button type="submit" href="/">Send Application</button>
+        </div>
+    </form>
+    </div>
+  </body>
+</html>
